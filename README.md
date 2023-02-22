@@ -1,6 +1,6 @@
 # Stack Overflow Clone
 
-This website is a question forum and also made to look like Stack Overflow.
+This website is a question forum and made to look like Stack Overflow.
 
 ## Technologies used:
 
@@ -26,8 +26,8 @@ npm start
 ```
 
 ## Pics of the application
-[Home page]()
-[Question page]()
+[Home page](https://github.com/Manoj-Athi/Stack-overflow/blob/main/Screenshots/Homepage.png)
+[Question page](https://github.com/Manoj-Athi/Stack-overflow/blob/main/Screenshots/Question.png)
 
 ## Live Link for the website:
 [Click here](https://stack-overflow-manoj.netlify.app/)
