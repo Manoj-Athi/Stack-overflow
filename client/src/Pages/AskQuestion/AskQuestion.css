@@ -1,11 +1,10 @@
 .ask-question{
-    min-height: 80vh;
+    min-height: 100vh;
     background-color: #f1f2f3;
 }
 
 .ask-ques-container{
     margin: auto;
-    padding: 0px 20px 20px 20px;
     max-width: 1200px;
 }
 
@@ -38,7 +37,7 @@
     border: solid 1px #0000003e;
     font-family: 'Roboto', sans-serif;
     width: calc(100% - 20px);
-    resize: none;
+    resize: vertical;
 }
 
 .review-btn{

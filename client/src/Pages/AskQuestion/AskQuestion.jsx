@@ -16,13 +16,8 @@ const AskQuestion = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if(User){
-            if(questionTitle && questionBody && questionTags){
-                dispatch(askQuestion({ questionTitle, questionBody, questionTags, userPosted: User.result.name }, navigate))
-            }
-            else alert("Please enter all the fields")
-        }
-        else alert("Login to ask question");
+        // console.log({ questionTitle, questionBody, questionTags})
+        dispatch(askQuestion({ questionTitle, questionBody, questionTags, userPosted: User.result.name }, navigate))
     }
 
     const handleEnter = (e) => {

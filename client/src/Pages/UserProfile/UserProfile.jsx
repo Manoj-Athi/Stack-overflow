@@ -11,7 +11,7 @@ import EditProfileForm from './EditProfileForm'
 import ProfileBio from './ProfileBio'
 import './UsersProfile.css'
 
-const UserProfile = ({slideIn, handleSlideIn}) => {
+const UserProfile = () => {
 
     const { id } = useParams()
     const users = useSelector((state) => state.usersReducer)
@@ -21,7 +21,7 @@ const UserProfile = ({slideIn, handleSlideIn}) => {
 
     return (
         <div className='home-container-1'>
-            <LeftSidebar slideIn={slideIn} handleSlideIn={handleSlideIn}/>
+            <LeftSidebar />
             <div className="home-container-2">
                 <section>
                     <div className="user-details-container">

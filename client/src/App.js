@@ -1,5 +1,5 @@
 import { BrowserRouter as Router } from 'react-router-dom' 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import './App.css';
 import Navbar from './components/Navbar/Navbar'
@@ -16,22 +16,11 @@ function App() {
     dispatch(fetchAllUsers())
   }, [dispatch])
 
-  
-  const [ slideIn, setSlideIn ] = useState(true)
-  
-  useEffect(()=>{
-    if(window.innerWidth <= 760){
-      setSlideIn(false)
-    }
-  }, [])
-
-  const handleSlideIn = () => setSlideIn(state => !state)
-
   return (
     <div className="App">
       <Router >
-        <Navbar handleSlideIn = {handleSlideIn}/>
-        <AllRoutes slideIn={slideIn} handleSlideIn={handleSlideIn}/>
+        <Navbar />
+        <AllRoutes />
       </Router >
     </div>
   );
