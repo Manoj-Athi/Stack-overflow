@@ -14,58 +14,7 @@ import { postAnswer, deleteQuestion, voteQuestion } from '../../actions/question
 const QuestionsDetails = () => {
     const { id } = useParams()
     const questionsList = useSelector(state => state.questionsReducer)
-    // var questionsList = [{ 
-    //     _id: '1',
-    //     upVotes: 3,
-    //     downVotes: 2,
-    //     noOfAnswers: 2,
-    //     questionTitle: "What is a function?",
-    //     questionBody: "It meant to be",
-    //     questionTags: ["java", "node js", "react js", "mongo db", "express js"],
-    //     userPosted: "mano",
-    //     userId: 1,
-    //     askedOn: "jan 1",
-    //     answer: [{
-    //         answerBody: "Answer",
-    //         userAnswered: 'kumar',
-    //         answeredOn: "jan 2",
-    //         userId: 2,
-    //     }]
-    // },{ 
-    //     _id: '2',
-    //     upVotes: 3,
-    //     downVotes: 2,
-    //     noOfAnswers: 0,
-    //     questionTitle: "What is a function?",
-    //     questionBody: "It meant to be",
-    //     questionTags: ["javascript", "R", "python"],
-    //     userPosted: "mano",
-    //     askedOn: "jan 1",
-    //     userId: 1,
-    //     answer: [{
-    //         answerBody: "Answer",
-    //         userAnswered: 'kumar',
-    //         answeredOn: "jan 2",
-    //         userId: 2,
-    //     }]
-    // },{ 
-    //     _id: '3',
-    //     upVotes: 3,
-    //     downVotes: 2,
-    //     noOfAnswers: 0,
-    //     questionTitle: "What is a function?",
-    //     questionBody: "It meant to be",
-    //     questionTags: ["javascript", "R", "python"],
-    //     userPosted: "mano",
-    //     askedOn: "jan 1",
-    //     userId: 1,
-    //     answer: [{
-    //         answerBody: "Answer",
-    //         userAnswered: 'kumar',
-    //         answeredOn: "jan 2",
-    //         userId: 2,
-    //     }]
-    // }]
+
     const [Answer, setAnswer] = useState('')
     const Navigate = useNavigate()
     const dispatch = useDispatch()
@@ -83,6 +32,7 @@ const QuestionsDetails = () => {
                 alert('Enter an answer before submitting')
             } else{
                 dispatch(postAnswer({ id, noOfAnswers: answerLength + 1, answerBody: Answer, userAnswered: User.result.name }))
+                setAnswer('')
             }
         }
     }
@@ -97,11 +47,21 @@ const QuestionsDetails = () => {
     }
 
     const handleUpVote = () => {
-        dispatch(voteQuestion(id, 'upVote'))
+        if(User === null){
+            alert('Login or Signup to up vote a question')
+            Navigate('/Auth')
+        }else{
+            dispatch(voteQuestion(id, 'upVote'))
+        }
     }
 
     const handleDownVote = () => {
-        dispatch(voteQuestion(id, 'downVote'))
+        if(User === null){
+            alert('Login or Signup to down vote a question')
+            Navigate('/Auth')
+        }else{
+            dispatch(voteQuestion(id, 'downVote'))
+        }
     }
 
     return (
@@ -163,8 +123,8 @@ const QuestionsDetails = () => {
                                 <section className='post-ans-container'>
                                     <h3>Your Answer</h3>
                                     <form onSubmit={ (e) => { handlePostAns(e, question.answer.length) }}>
-                                        <textarea name="" id="" cols="30" rows="10" onChange={e => setAnswer(e.target.value)}></textarea><br />
-                                        <input type="Submit" className='post-ans-btn' value='Post Your Answer'/>
+                                        <textarea name="" id="" cols="30" rows="10" value={Answer} onChange={e => setAnswer(e.target.value)}></textarea><br />
+                                        <input type="submit" className='post-ans-btn' value='Post Your Answer'/>
                                     </form>
                                     <p>
                                         Browse other Question tagged
