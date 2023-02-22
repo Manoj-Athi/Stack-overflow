@@ -26,8 +26,8 @@ npm start
 ```
 
 ## Pics of the application
-[Home page](https://github.com/Manoj-Athi/Stack-overflow/blob/main/Screenshots/Homepage.png)
-[Question page](https://github.com/Manoj-Athi/Stack-overflow/blob/main/Screenshots/Question.png)
+<img src="https://github.com/Manoj-Athi/Stack-overflow/blob/main/Screenshots/Homepage.png" width="40">
+<img src="https://github.com/Manoj-Athi/Stack-overflow/blob/main/Screenshots/Question.png" width="40">
 
 ## Live Link for the website:
 [Click here](https://stack-overflow-manoj.netlify.app/)
