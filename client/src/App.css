@@ -13,3 +13,10 @@
     padding: 24px;
     box-sizing: border-box;
 }
+
+@media screen and (max-width:760px) {
+    .home-container-2{
+        max-width: 100%;
+        width: 100%;
+    }
+}

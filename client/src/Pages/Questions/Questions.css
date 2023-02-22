@@ -122,3 +122,9 @@
     line-height: 18px;
     white-space: pre-line;
 }
+
+@media screen and (max-width: 1020px) {
+    .question-details-page{
+        width: calc( 100% - 24px);
+    }
+}
